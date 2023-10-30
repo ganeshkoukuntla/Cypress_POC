@@ -1,19 +1,28 @@
 class Login{
-    getUserName(){
-        return cy.get("input[type='email']");
+
+    Login_usernameTextBox = 'input[type="email"]';
+    Login_passwordTextBox = 'input[type="password"]';
+    Login_loginButton = 'button[type="submit"]';
+    Login_page = '//*[@class="heading" and contains(text(),"Login")]'
+
+    enterUsername(user_name){
+        cy.get(this.Login_usernameTextBox).should('be.visible');
+        cy.get(this.Login_usernameTextBox).type(user_name);
     }
 
-    getPassword(){
-        return cy.get("input[type='password']");
+    enterPasssword(password){
+        cy.get(this.Login_passwordTextBox).should('be.visible');
+        cy.get(this.Login_passwordTextBox).type(password);
     }
 
-    getLoginButton(){
-        return cy.get("button[type='submit']");
+    clickOnLoginButton(){
+        cy.get(this.Login_loginButton).click();
     }
 
-    getLoginPage(){
-        return cy.xpath('//*[@class="heading" and contains(text(),"Login")]');
+    VerifyLoginPageOpened(){
+        cy.xpath(this.Login_page).should('be.visible');
     }
 }
+
 
 export default Login

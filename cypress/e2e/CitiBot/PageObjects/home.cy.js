@@ -1,26 +1,38 @@
 class Homepage{
-    getOrganisationsSection(){
-        return cy.xpath('//section[@class="list"]//*[contains(text(),"Organisations")]');
+    homePage_organisationsSection = '//section[@class="list"]//*[contains(text(),"Organisations")]';
+    homePage_IntentsSection = '//section[@class="list"]//*[contains(text(),"Intents")]';
+    homePage_IntentsPage = '//*[@class="intents"]'
+    homePage_organisationsPage = '//*[@class="organisation"]'
+    homePage_citiBotLogo = '[class="logo"]';
+    homePage_logoutButton ='[class="logOut-btn"]';
+
+
+    clickOnOrganisationsSection(){
+        cy.xpath(this.homePage_organisationsSection).should('be.visible');
+        cy.xpath(this.homePage_organisationsSection).click();
     }
 
-    getIntentsSection(){
-        return cy.xpath('//section[@class="list"]//*[contains(text(),"Intents")]');
+    clickOnIntentsSection(){
+        cy.xpath(this.homePage_IntentsSection).should('be.visible');
+        cy.xpath(this.homePage_IntentsSection).click();
     }
 
-    getIntentsSectionPage(){
-        return cy.xpath('//*[@class="intents"]');
+    verifyIntentsSectionPage(){
+        cy.xpath(this.homePage_IntentsPage).should('be.visible');
     }
 
-    getOrganisationsSectionPage(){
-        return cy.xpath('//*[@class="organisation"]');
+    verifyOrganisationsSectionPage(){
+        cy.xpath(this.homePage_organisationsPage).should('be.visible');
     }
 
-    getCitiBotLogo(){
-        return cy.get('[class="logo"]');
+    verifyCitiBotLogo(){
+        cy.wait(500);
+        cy.get(this.homePage_citiBotLogo).should('be.visible');
     }
 
-    getLogoutButton(){
-        return cy.get('[class="logOut-btn"]');
+    clickOnLogoutButton(){
+        cy.get(this.homePage_logoutButton).should('be.visible');
+        cy.get(this.homePage_logoutButton).click();
     }
 }
 
