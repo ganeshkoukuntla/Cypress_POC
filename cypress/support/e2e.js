@@ -22,3 +22,5 @@ import '@bahmutov/cy-api';
 import 'cypress-mochawesome-reporter/register';
 import '@mmisty/cypress-allure-adapter/support';
 import 'cypress-xpath'
+import 'xlsx'
+import 'cypress-iframe';

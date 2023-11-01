@@ -1,12 +1,11 @@
-import Login from '../../PageObjects/Login.cy'
-import Home from '../../PageObjects/home.cy'
+import Login from '../PageObjects/Login.cy'
+import Home from '../PageObjects/home.cy'
 import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
 const loginPage = new Login();
 const HomePage = new Home();
 
 Given('Open the citibot url', () => {
     cy.visit('/');
-    loginPage.VerifyLoginPageOpened();
 });
 
 When('I enter username and password', () => {
@@ -18,21 +17,22 @@ When('click on login button', () => {
     loginPage.clickOnLoginButton();
 });
 
-When('Verifying the Organisations page', () => {
+When('verify the Citibot homepage', () => {
     cy.wait(500);
     HomePage.verifyCitiBotLogo();
     HomePage.verifyOrganisationsSectionPage();
 });
 
-When('click on Intents section',()=>{
-    HomePage.clickOnIntentsSection();
-});
-
-Then('verify the Intents in citibot homepage',()=>{
-    HomePage.verifyIntentsSectionPage();
-});
-
 Then('Logout from citibot', () => {
     HomePage.clickOnLogoutButton();
     loginPage.VerifyLoginPageOpened();
+});
+
+Given('launch html - {word}',(filename)=>{
+    loginPage.navigateToURL(filename);
+});
+
+Given('click chatbox',()=>{
+    HomePage.clickOnChartBox();
+    HomePage.verifyChartBoxOpened();
 });

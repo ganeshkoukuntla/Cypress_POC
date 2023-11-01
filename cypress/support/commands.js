@@ -23,3 +23,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+// Define a custom task in your 'commands.js' file  
+
+Cypress.Commands.add('readExcelCell', (options) => {
+    return cy.task('readXlsx', {
+        filename: options.filename,
+        sheetName: options.sheetName,
+        cellReference: options.cellReference,
+    });
+});
+
