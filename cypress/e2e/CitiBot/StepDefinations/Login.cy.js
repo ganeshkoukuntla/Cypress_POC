@@ -5,7 +5,7 @@ const loginPage = new Login();
 const HomePage = new Home();
 
 Given('Open the citibot url', () => {
-    cy.visit('/');
+    loginPage.navigateToChartBot();
 });
 
 When('I enter username and password', () => {

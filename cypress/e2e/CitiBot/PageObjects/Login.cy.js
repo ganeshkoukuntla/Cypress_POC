@@ -6,7 +6,9 @@ class Login{
     Login_loginButton = 'button[type="submit"]';
     Login_page = '//*[@class="heading" and contains(text(),"Login")]'
 
-
+    navigateToChartBot(){
+        cy.visit('https://webchat-admin.staging.citibot.io/login');
+    }
     enterUsername(user_name){
         cy.get(this.Login_usernameTextBox).should('be.visible');
         cy.get(this.Login_usernameTextBox).type(user_name);

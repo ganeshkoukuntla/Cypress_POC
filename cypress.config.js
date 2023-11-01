@@ -26,6 +26,5 @@ module.exports = defineConfig({
     defaultCommandTimeout: 30000,
     watchForFileChanges: false,
     chromeWebSecurity: false,
-    // baseUrl:'https://webchat-admin.staging.citibot.io/login',
   },
 });
