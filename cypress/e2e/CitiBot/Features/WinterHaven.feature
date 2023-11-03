@@ -9,8 +9,18 @@ Feature: Chatbot
 
 Examples:
     | Utterances |
+    | "Illegal Dumping" |
     | "Broken tree" |
     | "Talk to representative" |
+    | "Call police" |
+    | "Flood in basement area" |
+    | "Curbside Code Violation" |
+    | "Missed Houshold Yard Waste" |
+    | "Missed Household Trash Pickup" |    
+    | "Repair trash can" |       
+    | "Graffiti on public mall wall" |    
+    | "Pothole on main road" |      
+    | "Roll Out Cart Request" | 
             
     
     
