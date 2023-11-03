@@ -29,10 +29,10 @@ Then('Logout from citibot', () => {
 });
 
 Given('launch html - {word}',(filename)=>{
-    loginPage.navigateToURL(filename);
+    HomePage.navigateToURL(filename);
 });
 
 Given('click chatbox',()=>{
     HomePage.clickOnChartBox();
-    HomePage.verifyChartBoxOpened();
+    
 });

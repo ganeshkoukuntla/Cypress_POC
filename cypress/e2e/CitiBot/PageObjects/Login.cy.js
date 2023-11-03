@@ -26,12 +26,6 @@ class Login{
     VerifyLoginPageOpened(){
         cy.xpath(this.Login_page).should('be.visible');
     }
-
-    navigateToURL(filename){
-        const html_file_path = path.join(__dirname,'../../../fixtures/HTML_Files/Ask_winter_heaven.html');
-        cy.visit(html_file_path);
-        cy.title().should('include', 'Citibot Sample Project');
-    }
 }
 
 

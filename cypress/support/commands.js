@@ -32,4 +32,10 @@ Cypress.Commands.add('readExcelCell', (options) => {
         cellReference: options.cellReference,
     });
 });
+Cypress.Commands.add('GetNumberOfRows', (options) => {
+    return cy.task('getNumberOfRows', {
+        filename: options.filename,
+        sheetName: options.sheetName,
+    });
+});
 
